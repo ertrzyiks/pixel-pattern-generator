@@ -1,4 +1,4 @@
-schibsted-pixel-web
+pixel-pattern-generator
 ===================
 
-This is generator for new Schibsted branding pixel.
+This is generator for pixel figures.
