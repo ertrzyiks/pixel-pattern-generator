@@ -7,18 +7,18 @@ module.exports = function(grunt) {
         less: {
             development: {
                 files: {
-                    "css/my-pixelart.css": "less/my-pixelart.less"
+                    "example/css/my-pixelart.css": "example/less/my-pixelart.less"
                 }
             }
         },
 
         watch: {
             scripts: {
-                files: ['less/*.less'],
+                files: ['example/less/*.less'],
                 tasks: ['less']
             },
             options: {
-                livereload: true,
+                livereload: true
             }
         }
     });
