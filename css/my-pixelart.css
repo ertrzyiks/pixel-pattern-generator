@@ -1,8 +1,7 @@
-.my-pixelart {
+.pixelart-1 {
   font-size: 25px;
 }
-.my-pixelart::before {
-  content: "";
+.pixelart-1 .pixelart-pixel {
   display: block;
   width: 1em;
   height: 1em;
