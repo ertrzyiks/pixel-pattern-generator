@@ -1,0 +1,36 @@
+@import "for";
+
+.pixelart(@pixels...) {
+  .set-pixel(@row, @col, @color) when (@row = 0) and (@col = 0) {
+    background-color: @color;
+  }
+
+  .set-pixel(@row, @col, @color) when (default()) {
+    .box-shadow(@col * 1em @row * 1em @color);
+  }
+
+  .box-shadow(@shadow) {
+    -webkit-box-shadow+: @shadow;
+    -moz-box-shadow+: @shadow;
+    box-shadow+: @shadow;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+
+    .for(@pixels); .-each(@pixel) {
+      @row: extract(@pixel, 1);
+      @col: extract(@pixel, 2);
+      @color: extract(@pixel, 3);
+
+      .set-pixel(@row, @col, @color);
+    }
+  }
+}
+
+.pixelart-size(@size){
+  font-size: @size;
+}
