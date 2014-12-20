@@ -19,6 +19,10 @@ module.exports = function(grunt) {
             }
         },
 
+        changelog: {
+            options: {}
+        },
+
         less: {
             development: {
                 files: {
@@ -36,11 +40,14 @@ module.exports = function(grunt) {
             }
         },
 
-        release: {
+        push: {
             options: {
-                push: false,
-                pushTags: false,
-                npm: false
+                files: ['package.json'],
+                updateConfigs: ['pkg'],
+                add: true,
+                addFiles: ['.'],
+                commitFiles: ['-a'],
+                pushTo: 'origin'
             }
         },
 
@@ -63,9 +70,11 @@ module.exports = function(grunt) {
         'marked-material'
     ]);
 
-    grunt.registerTask('make-release', [
+    grunt.registerTask('release', [
         'build-docs',
-        'release',
-        //'buildcontrol:pages'
+        'push::bump-only',
+        'changelog',
+        'push-commit',
+        'buildcontrol:pages'
     ]);
 };
