@@ -1,6 +1,8 @@
-# Pixel pattern
+# Pixel pattern 
 
-> Utility created to ease maintenance of pixel pattern figures
+[![Build Status](https://travis-ci.org/ertrzyiks/pixel-pattern-generator.svg?branch=master)](https://travis-ci.org/ertrzyiks/pixel-pattern-generator)
+
+Utility created to ease maintenance of pixel pattern figures
 
 ## Requirements/support
 
