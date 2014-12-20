@@ -1,0 +1,41 @@
+@import "../../src/less/pixelart";
+
+@blue1: #93d4e9;
+@blue2: #69c5e2;
+@blue3: #289fc5;
+@blue4: #0086b9;
+@blue5: #006ba1;
+@blue6: #005e88;
+
+
+.sch-pixel-pattern{
+  .pixelart-size(25px);
+
+  .pixelart(
+    0 4 @blue3,
+
+    1 5 @blue5,
+
+    2 4 @blue3,
+
+    3 3 @blue1,
+    3 4 @blue2,
+    3 5 @blue5,
+
+    4 0 @blue1,
+    4 2 @blue1,
+    4 3 @blue2,
+    4 4 @blue3,
+    4 5 @blue4,
+
+    5 1 @blue5,
+    5 3 @blue3,
+    5 4 @blue1,
+    5 5 @blue5,
+
+    6 2 @blue3,
+    6 3 @blue4,
+    6 4 @blue5,
+    6 5 @blue6
+  );
+}
