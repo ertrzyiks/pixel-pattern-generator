@@ -1,3 +1,12 @@
+<a name="0.0.3"></a>
+### 0.0.3 (2014-12-20)
+
+
+#### Bug Fixes
+
+* **less:** pixel pattern element size match to appearance, closes #1 ([f003116b](https://github.com/ertrzyiks/pixel-pattern-generator/commit/f003116bad9bdc2100907e081e1913c1df361051))
+
+
 <a name="0.0.2"></a>
 ### 0.0.2 (2014-12-20)
 
