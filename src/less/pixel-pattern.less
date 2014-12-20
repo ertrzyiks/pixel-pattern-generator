@@ -1,22 +1,8 @@
 .pixel-pattern(@pixels...) {
-  //https://github.com/seven-phases-max/less.curious/blob/master/src/for.less
-  .for(@array)   when (default()) {.for-impl_(length(@array))}
-  .for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
-  .for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+  .pixel-pattern-util_();
 
-  .set-pixel(@row, @col, @color) when (@row = 0) and (@col = 0) {
-    background-color: @color;
-  }
-
-  .set-pixel(@row, @col, @color) when (default()) {
-    .box-shadow(@col * 1em @row * 1em @color);
-  }
-
-  .box-shadow(@shadow) {
-    -webkit-box-shadow+: @shadow;
-    -moz-box-shadow+: @shadow;
-    box-shadow+: @shadow;
-  }
+  .set-width(@pixels);
+  .set-height(@pixels);
 
   & .pixel-pattern-pixel{
     display: block;
@@ -28,11 +14,82 @@
       @col: extract(@pixel, 2);
       @color: extract(@pixel, 3);
 
-      .set-pixel(@row, @col, @color);
+      .pixel-pattern-set-pixel(@row, @col, @color);
     }
   }
 }
 
+.pixel-pattern-set-pixel(@row, @col, @color) when (@row = 0) and (@col = 0) {
+  background-color: @color;
+}
+
+.pixel-pattern-set-pixel(@row, @col, @color) when (default()) {
+  .box-shadow(@shadow) {
+    -webkit-box-shadow+: @shadow;
+    -moz-box-shadow+: @shadow;
+    box-shadow+: @shadow;
+  }
+
+  .box-shadow(@col * 1em @row * 1em @color);
+}
+
 .pixel-pattern-size(@size){
   font-size: @size;
+}
+
+
+.pixel-pattern-util_(){
+  .pixel-pattern-util_for_();
+  .pixel-pattern-util_set_width_();
+  .pixel-pattern-util_set_height_();
+}
+
+//Foreach sugar syntax
+//https://github.com/seven-phases-max/less.curious/blob/master/src/for.less
+.pixel-pattern-util_for_(){
+  .for(@array)   when (default()) {.for-impl_(length(@array))}
+  .for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+  .for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+}
+
+//Set width to max from pixel array
+.pixel-pattern-util_set_width_(){
+  .set-width(@pixels, @currentWidth, @n) when (@n = 0) {
+    width: (@currentWidth + 1) * 1em;
+  }
+
+  .set-width(@pixels, @currentWidth: 0, @n:length(@pixels)) when (@n > 0) {
+    @pixel: extract(@pixels, @n);
+
+    .set-width-impl_(@pixels, @currentWidth, extract(@pixel, 2), @n);
+  }
+
+  .set-width-impl_(@pixels, @w, @newWidth, @n) when (@w >= @newWidth) {
+    .set-width(@pixels, @w, @n - 1);
+  }
+
+  .set-width-impl_(@pixels, @w, @newWidth, @n) when (@w < @newWidth) {
+    .set-width(@pixels, @newWidth, @n - 1);
+  }
+}
+
+//Set height to max from pixel array
+.pixel-pattern-util_set_height_() {
+  .set-height(@pixels, @currentHeight, @n) when (@n = 0) {
+    height: (@currentHeight + 1) * 1em;
+  }
+
+  .set-height(@pixels, @currentHeight: 0, @n:length(@pixels)) when (@n > 0) {
+    @pixel: extract(@pixels, @n);
+
+    .set-height-impl_(@pixels, @currentHeight, extract(@pixel, 1), @n);
+  }
+
+  .set-height-impl_(@pixels, @w, @newHeight, @n) when (@w >= @newHeight) {
+    .set-height(@pixels, @w, @n - 1);
+  }
+
+  .set-height-impl_(@pixels, @w, @newHeight, @n) when (@w < @newHeight) {
+    .set-height(@pixels, @newHeight, @n - 1);
+  }
 }

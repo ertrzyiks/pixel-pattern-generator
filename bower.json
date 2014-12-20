@@ -1,0 +1,21 @@
+{
+  "name": "pixel-pattern-generator",
+  "version": "0.0.2",
+  "homepage": "https://ertrzyiks.github.io/pixel-pattern-generator",
+  "authors": [
+    "Mateusz Derks <mateusz.derks@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec",
+    "docs",
+    "tasks"
+  ],
+  "devDependencies": {
+    "less-1.7.5": "less#1.7.5",
+    "less-2.0.0": "less#2.0.0"
+  }
+}
