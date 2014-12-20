@@ -1,5 +1,7 @@
 .sch-pixel-pattern {
   font-size: 25px;
+  width: 6em;
+  height: 7em;
 }
 .sch-pixel-pattern .pixel-pattern-pixel {
   display: block;

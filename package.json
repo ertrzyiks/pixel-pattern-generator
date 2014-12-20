@@ -10,15 +10,17 @@
     "type": "git",
     "url": "https://github.com/ertrzyiks/pixel-pattern-generator.git"
   },
-  "author": "ertrzyiks <mateusz.derks@gmail.com>",
+  "author": "Mateusz Derks <mateusz.derks@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ertrzyiks/pixel-pattern-generator/issues"
   },
-  "homepage": "https://github.com/ertrzyiks/pixel-pattern-generator",
+  "homepage": "https://ertrzyiks.github.io/pixel-pattern-generator",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-build-control": "^0.2.2",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-jasmine": "^0.8.1",
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-conventional-changelog": "^1.1.0",

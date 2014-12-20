@@ -2,6 +2,17 @@
 
 > Utility created to ease maintenance of pixel pattern figures
 
+## Requirements/support
+
+Less v1.6.0+
+
+Tested and works in browsers:
+- Chrome
+- Safari 5+
+- Firefox
+- Opera
+- IE9+
+
 ## Install
 
 Copy src folder to your project.
