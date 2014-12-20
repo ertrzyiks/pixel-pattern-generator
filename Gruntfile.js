@@ -4,17 +4,41 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        buildcontrol: {
+            options: {
+                dir: 'docs',
+                commit: true,
+                push: true,
+                message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+            },
+            pages: {
+                options: {
+                    remote: '<%= pkg.repository.url %>',
+                    branch: 'gh-pages'
+                }
+            }
+        },
+
         less: {
             development: {
                 files: {
-                    "example/css/my-pixelart.css": "example/less/my-pixelart.less"
+                    "docs/css/sch-pixel-pattern.css": "docs/less/sch-pixel-pattern.less"
+                }
+            }
+        },
+
+
+        'marked-material': {
+            readme: {
+                files:{
+                    'docs/app/templates/home.html': 'README.md'
                 }
             }
         },
 
         watch: {
             scripts: {
-                files: ['example/less/*.less'],
+                files: ['docs/less/*.less'],
                 tasks: ['less']
             },
             options: {
@@ -24,4 +48,15 @@ module.exports = function(grunt) {
     });
 
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    require('./tasks/marked_material.js')(grunt);
+
+    grunt.registerTask('build-docs', [
+        'less',
+        'marked-material'
+    ]);
+
+    grunt.registerTask('release-docs', [
+        'build-docs',
+        'buildcontrol'
+    ]);
 };

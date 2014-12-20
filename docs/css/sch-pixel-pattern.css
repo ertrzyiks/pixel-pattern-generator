@@ -1,7 +1,7 @@
-.pixelart-1 {
+.sch-pixel-pattern {
   font-size: 25px;
 }
-.pixelart-1 .pixelart-pixel {
+.sch-pixel-pattern .pixelart-pixel {
   display: block;
   width: 1em;
   height: 1em;
