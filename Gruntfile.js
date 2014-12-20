@@ -36,6 +36,14 @@ module.exports = function(grunt) {
             }
         },
 
+        release: {
+            options: {
+                push: false,
+                pushTags: false,
+                npm: false
+            }
+        },
+
         watch: {
             scripts: {
                 files: ['docs/less/*.less'],
@@ -55,8 +63,9 @@ module.exports = function(grunt) {
         'marked-material'
     ]);
 
-    grunt.registerTask('release-docs', [
+    grunt.registerTask('make-release', [
         'build-docs',
-        'buildcontrol'
+        'release',
+        //'buildcontrol:pages'
     ]);
 };

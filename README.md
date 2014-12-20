@@ -12,9 +12,9 @@ Use mixin to set size of pixel and assing color to chosen coordinates
 
 ```less
 .pixelart-myawesomesquare{
-  .pixelart-size(50px);
+  .pixel-pattern-size(50px);
 
-  .pixelart(
+  .pixel-pattern(
     0 0 red, 
     0 1 blue, 
     1 0 greed, 

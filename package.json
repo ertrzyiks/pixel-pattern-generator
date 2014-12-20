@@ -21,6 +21,7 @@
     "grunt-build-control": "^0.2.2",
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-release": "^0.9.0",
     "highlight.js": "^8.4.0",
     "marked": "^0.3.2",
     "matchdep": "^0.3.0"
