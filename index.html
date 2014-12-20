@@ -28,12 +28,20 @@
     <div>
         <md-toolbar>
             <h2 class="md-toolbar-tools">
+                <span>Pixel <span hide-sm>pattern</span></span>
                 <md-button href="#" ui-sref="home">Home</md-button>
                 <md-button href="#" ui-sref="example">example</md-button>
                 <span flex></span>
-                <span>Pixel <span hide-sm>pattern</span></span>
             </h2>
         </md-toolbar>
+
+        <md-subheader class="md-primary">Current version: <span ng-bind="lib.version"></span></md-subheader>
+
+        <div hide-gt-sm layout layout-margin layout-align="center center">
+            <md-button href="https://github.com/ertrzyiks/pixel-pattern-generator">
+                Fork on github
+            </md-button>
+        </div>
 
         <div layout layout-align="center center">
             <div ui-view flex layout="column" layout-margin style="max-width: 960px">
@@ -41,6 +49,15 @@
         </div>
     </div>
 
+    <a hide-sm href="https://github.com/ertrzyiks/pixel-pattern-generator">
+        <img
+                style="position: absolute; top: 0; right: 0; border: 0; z-index: 10"
+                src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+                alt="Fork me on GitHub"
+                data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+    </a>
+
     <script src="app/app.js"></script>
+    <script src="app/globals.js"></script>
 </body>
 </html>
