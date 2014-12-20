@@ -21,7 +21,7 @@ Copy src folder to your project.
 
 ## Usage
 
-Use mixin to set size of pixel and assing color to chosen coordinates
+Use mixin to set size of pixel and assign color to chosen coordinates
 
 ```less
 .pixelart-myawesomesquare{
