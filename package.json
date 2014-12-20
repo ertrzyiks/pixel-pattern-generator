@@ -24,6 +24,7 @@
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-conventional-changelog": "^1.1.0",
+    "grunt-ejs-render": "^0.2.7",
     "grunt-push-release": "^0.1.1",
     "highlight.js": "^8.4.0",
     "marked": "^0.3.2",

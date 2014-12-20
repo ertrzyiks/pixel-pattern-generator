@@ -90,6 +90,18 @@ module.exports = function(grunt) {
             }
         },
 
+        render: {
+            docs_globals: {
+                options: {
+                    data: {
+                        version: '<%= pkg.version %>'
+                    }
+                },
+                files: {
+                    'docs/app/globals.js': ['docs/app/globals.js.tmpl']
+                }
+            }
+        },
         watch: {
             scripts: {
                 files: ['docs/less/*.less'],
@@ -111,12 +123,13 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build-docs', [
         'less',
-        'marked-material'
+        'marked-material',
+        'render:docs_globals'
     ]);
 
     grunt.registerTask('release', [
-        'build-docs',
         'push::bump-only',
+        'build-docs',
         'changelog',
         'push-commit',
         'buildcontrol:pages'
