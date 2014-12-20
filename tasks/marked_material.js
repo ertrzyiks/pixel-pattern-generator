@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         renderer.code = function (code, lang, escaped) {
             var html = originalCode.call(this, code, lang, escaped);
 
-            return '<div flex>' + html + '</div>';
+            return '<div layout-margin>' + html + '</div>';
         };
 
         renderer.heading = function (text, level) {
