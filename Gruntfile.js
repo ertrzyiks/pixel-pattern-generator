@@ -65,6 +65,8 @@ module.exports = function(grunt) {
         less: {
             development: {
                 files: {
+                    "docs/css/pixel-pattern-1.css": "docs/less/pixel-pattern-1.less",
+                    "docs/css/pixel-pattern-2.css": "docs/less/pixel-pattern-2.less",
                     "docs/css/sch-pixel-pattern.css": "docs/less/sch-pixel-pattern.less"
                 }
             }
