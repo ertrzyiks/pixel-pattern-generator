@@ -1,14 +1,13 @@
-<pre>{{data|json}}</pre>
 <md-list>
     <md-item ng-repeat="example in data.examples">
-        <md-item-content layout-margin>
-            <div flex layout layout-align="center center">
+        <md-item-content layout="column" layout-gt-sm="row" layout-margin>
+            <div flex-gt-sm="30" layout layout-align="center center">
                 <div class="pixel-pattern" ng-class="example.className">
                     <div class="pixel-pattern-pixel"></div>
                 </div>
             </div>
 
-            <md-sidenav flex class="md-whiteframe-z2" md-is-locked-open="true" style="max-height: 400px">
+            <md-sidenav flex-gt-sm="70" class="md-whiteframe-z2" md-is-locked-open="true" style="max-height: 450px">
                     <pre ng-include="example.fileName"></pre>
             </md-sidenav>
         </md-item-content>
