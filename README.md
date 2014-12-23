@@ -30,7 +30,7 @@ Use mixin to set size of pixel and assign color to chosen coordinates
   .pixel-pattern(
     0 0 red, 
     0 1 blue, 
-    1 0 greed, 
+    1 0 green, 
     1 1 yellow
   );
 }
