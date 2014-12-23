@@ -18,6 +18,15 @@ module.exports = function(grunt) {
                 }
             }
         },
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'Safari 5']
+            },
+            angular_material: {
+                src: 'bower_components/angular-material/angular-material.min.css',
+                dest: 'docs/css/angular-material.min.css'
+            }
+        },
 
         connect: {
             test : {
@@ -34,7 +43,7 @@ module.exports = function(grunt) {
                 src: 'src/**/*.js',
                 specs: 'spec/**/*.spec.js',
                 helpers: 'spec/helpers/*.js',
-                host: 'http://127.0.0.1:8000/',
+                host: 'http://127.0.0.1:8000/'
             },
 
             'less-1.6.0': {
@@ -125,6 +134,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build-docs', [
         'less',
+        'autoprefixer:angular_material',
         'marked-material',
         'render:docs_globals'
     ]);
