@@ -2,3 +2,21 @@ md-toolbar.docs-toolbar{
     background-color: #E0E0E0;
     color: #616161;
 }
+
+html #flex-positive {
+    display: none;
+}
+
+html.flexbox #flex-positive,
+html.flexboxlegacy #flex-positive{
+    display: block;
+}
+
+html.flexbox #flex-negative,
+html.flexboxlegacy #flex-negative{
+    display: none;
+}
+
+.browserupgrade{
+    padding: 5px;
+}

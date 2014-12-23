@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="css/sch-pixel-pattern.css">
 
     <!-- Angular Material Dependencies -->
-    <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+    <script src="js/modernizr.custom.min.js"></script>
+    <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
 
@@ -27,7 +28,29 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
 </head>
 <body ng-app="docs">
-    <div>
+    <div id="flex-negative">
+        <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser.
+            Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+
+        <p class="browserupgrade">If you are here just to see working examples, use following links:</p>
+
+        <ul>
+            <li>
+                <a href="examples/pixel-pattern-1.html">Pixel pattern #1</a>
+            </li>
+
+            <li>
+                <a href="examples/sch-pixel-pattern.html">Schibsted pixel pattern sample</a>
+            </li>
+            <li>
+                <a href="examples/pixel-pattern-2.html">Pixel pattern #2</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="flex-positive">
         <md-toolbar>
             <h2 class="md-toolbar-tools">
                 <span>Pixel <span hide-sm>pattern</span></span>
