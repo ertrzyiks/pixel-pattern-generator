@@ -1,6 +1,8 @@
 <a name="0.0.4"></a>
 ### 0.0.4 (2014-12-27)
 
+* update docs
+* release as bower component
 
 <a name="0.0.3"></a>
 ### 0.0.3 (2014-12-20)

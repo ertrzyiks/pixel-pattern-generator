@@ -26,7 +26,7 @@ bower install pixel-pattern-generator
 ### with git
 
 ```bash
-    git clone git@github.com:ertrzyiks/pixel-pattern-generator.git
+git clone git@github.com:ertrzyiks/pixel-pattern-generator.git
 ```
 ## Usage
 

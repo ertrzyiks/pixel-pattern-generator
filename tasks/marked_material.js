@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                 return html;
             }
 
-            return '<h' + level + '>' + text + '</h' + level + '>';
+            return '<h' + level + ' flex>' + text + '</h' + level + '>';
         };
 
         marked.setOptions({
