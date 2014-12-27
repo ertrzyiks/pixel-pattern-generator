@@ -19,12 +19,15 @@ Tested and works in browsers:
 
 ### with bower
     
-    bower install pixel-pattern-generator
+```bash
+bower install pixel-pattern-generator
+```
     
 ### with git
 
+```bash
     git clone git@github.com:ertrzyiks/pixel-pattern-generator.git
-
+```
 ## Usage
 
 Use mixin to set size of pixel and assign color to chosen coordinates
