@@ -17,7 +17,13 @@ Tested and works in browsers:
 
 ## Install
 
-Copy src folder to your project.
+### with bower
+    
+    bower install pixel-pattern-generator
+    
+### with git
+
+    git clone git@github.com:ertrzyiks/pixel-pattern-generator.git
 
 ## Usage
 
