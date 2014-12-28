@@ -8,13 +8,18 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="../../dist/js/pixel-pattern-generator.min.js"></script>
     <link rel="stylesheet" href="../css/sch-pixel-pattern.css">
 </head>
 <body>
-    <div class="pixel-pattern sch-pixel-pattern">
+    <div id="sch-pixel-pattern" class="pixel-pattern sch-pixel-pattern">
         <div class="pixel-pattern-pixel"></div>
     </div>
 
     <a href="../">back</a>
+
+    <script>
+        PPG.setupFallback('sch-pixel-pattern');
+    </script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+.pixel-pattern-fixture {
+  font-size: 25px;
+  width: 2em;
+  height: 2em;
+}
+.pixel-pattern-fixture .pixel-pattern-pixel {
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-color: #000000;
+  -webkit-box-shadow: 1em 0em #0000ff, 1em 1em #008000, 0em 1em #ff0000;
+  -moz-box-shadow: 1em 0em #0000ff, 1em 1em #008000, 0em 1em #ff0000;
+  box-shadow: 1em 0em #0000ff, 1em 1em #008000, 0em 1em #ff0000;
+}

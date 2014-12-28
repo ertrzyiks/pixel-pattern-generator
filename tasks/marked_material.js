@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+    'use strict';
+
     var marked = require('marked'),
         fs = require('fs');
 
@@ -12,7 +14,6 @@ module.exports = function (grunt) {
         renderer.paragraph = function (text) {
             return '<p flex>' + text + '</p>';
         };
-
 
         renderer.code = function (code, lang, escaped) {
             var html = originalCode.call(this, code, lang, escaped);
@@ -68,7 +69,7 @@ module.exports = function (grunt) {
         return output;
     }
 
-    grunt.registerMultiTask('marked-material', 'Convert markdown code to html for ngMaterial', function() {
+    grunt.registerMultiTask('marked-material', 'Convert markdown code to html for ngMaterial', function () {
         grunt.log.writeln('Converting markdown to html');
 
         var filesCount = 0;
