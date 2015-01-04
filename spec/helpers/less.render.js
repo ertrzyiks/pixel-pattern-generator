@@ -38,7 +38,7 @@ function renderLess(code, done) {
 }
 
 function renderLessWithLibrary(code, done) {
-    loadFile('src/less/pixel-pattern.less', function (err, libcode) {
+    loadFile('dist/less/pixel-pattern.less', function (err, libcode) {
         renderLess(libcode + '\n' + code, done);
     });
 }

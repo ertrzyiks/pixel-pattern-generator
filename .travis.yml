@@ -6,3 +6,6 @@ before_script:
 - bower install
 script:
 - npm test
+env:
+  matrix:
+    secure: Ura70IlE8zZi55doTSMVEM0zZHogtIkGGmxJwSUlcWNVg4j/PoeOrYGmR0SXzYa2G0kuSBU99cfIB3KaHSfGMmPIcHh0G/3aVeJ6PVjb4/zFQVpbkXojiiVYD0cI9v2DAF6BPiANoxiT53jDYTvX7gaVX3gf+hcaiStxykEan8Y=

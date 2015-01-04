@@ -8,15 +8,25 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    ".jscsrc",
+    ".jshintrc",
     "node_modules",
     "bower_components",
     "spec",
+    "src",
     "docs",
     "tasks"
   ],
   "devDependencies": {
     "less-1.7.5": "less#1.7.5",
     "less-2.0.0": "less#2.0.0",
-    "angular-material": "~0.6.1"
+    "angular-material": "~0.6.1",
+    "jasmine-jquery": "~2.0.5",
+    "jquery": "~1.10.2",
+    "es5-shim": "~4.0.5",
+    "jasmine-jsreporter": "~0.1.2"
+  },
+  "resolutions": {
+    "jquery": "~1.10.2"
   }
 }
