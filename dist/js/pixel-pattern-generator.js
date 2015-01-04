@@ -8,6 +8,9 @@
     var PPG = root.PPG;
     PPG.util = {
         filter: function(input, fn) {
+            if ("function" === typeof input.filter) {
+                return input.filter(fn);
+            }
             var result = [], inputLength = input.length, i;
             for (i = 0; i < inputLength; i++) {
                 if (fn(input[i])) {
@@ -120,7 +123,6 @@
             pixelEl = this.createPixel_(pixels[i]);
             container.appendChild(pixelEl);
         }
-        return true;
     };
     Fallback.prototype.createPixel_ = function(pixelData) {
         var el = this.createPixelElement_();

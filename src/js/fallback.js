@@ -4,6 +4,11 @@
     var PPG = root.PPG,
         dom = PPG.dom;
 
+    /**
+     * @class
+     * @constructor
+     * @param {HTMLElement} element Html element of pixel figure
+     */
     function Fallback(element) {
         this.el = element;
         this.pixel = PPG.dom.getChildByClass(this.el, 'pixel-pattern-pixel');
@@ -11,6 +16,11 @@
         PPG.dom.addClass(this.el, 'pixel-pattern-fallback');
     }
 
+    /**
+     * Creates or recreates html structure, which mirror box shadow pixels.
+     *
+     * @method update
+     */
     Fallback.prototype.update = function () {
         var pixels = this.getPixelsFrom_(this.pixel),
             pixelsNum = pixels.length,
@@ -25,8 +35,6 @@
             pixelEl = this.createPixel_(pixels[i]);
             container.appendChild(pixelEl);
         }
-
-        return true;
     };
 
     Fallback.prototype.createPixel_ = function (pixelData) {
@@ -102,6 +110,16 @@
         });
     };
 
+    /**
+     * @class PPG
+     */
+    /**
+     * Setup fallback manually on specific html element.
+     *
+     * @method setupFallback
+     * @param {HTMLElement|String} el Html node or id of element as string
+     * @return {Fallback}
+     */
     PPG.setupFallback = function (el) {
         if (!PPG.isEnabled()) {
             return null;

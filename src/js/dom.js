@@ -19,15 +19,39 @@
         });
     }
 
+    /**
+     * DOM manipulation helpers
+     *
+     * @class PPG.dom
+     * @singleton
+     * @private
+     */
     root.PPG.dom = {
+        /**
+         * @method hasClass
+         * @param {HTMLElement} el
+         * @param {String} className
+         * @return {Boolean}
+         */
         hasClass: hasClass,
 
+        /**
+         *
+         * @param {HTMLElement} el
+         * @param {String} className
+         */
         addClass: function (el, className) {
             if (false === hasClass(el, className)) {
                 el.className += ' ' + className;
             }
         },
 
+        /**
+         *
+         * @param {HTMLElement} el
+         * @param {String} property
+         * @returns {String}
+         */
         getComputedStyle: function (el, property) {
             var camelCase;
 
@@ -46,6 +70,12 @@
             throw new Error('Cant find value for ' + property);
         },
 
+        /**
+         *
+         * @param {HTMLElement} el
+         * @param {String} className
+         * @returns {HTMLElement}
+         */
         getChildByClass: function (el, className) {
             var children = el.childNodes,
                 n = children.length,
@@ -63,6 +93,12 @@
             return null;
         },
 
+        /**
+         *
+         * @param {HTMLElement} el
+         * @param {String} className
+         * @returns {HTMLElement}
+         */
         getContainer: function (el, className) {
             var container = this.getChildByClass(el, className);
 
@@ -75,6 +111,11 @@
             return container;
         },
 
+        /**
+         *
+         * @param {HTMLElement} el
+         * @returns {HTMLElement}
+         */
         removeChildren: function (el) {
             while (el.firstChild) {
                 el.removeChild(el.firstChild);

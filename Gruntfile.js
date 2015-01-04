@@ -36,6 +36,10 @@ module.exports = function(grunt) {
             }
         },
 
+        clean: {
+            docs_api: ['docs/api/']
+        },
+
         connect: {
             test : {
                 port : 8000
@@ -100,6 +104,24 @@ module.exports = function(grunt) {
             }
         },
 
+        jsduck: {
+            main: {
+                src: [
+                    'src/js/*.js'
+                ],
+
+                dest: 'docs/api',
+
+                options: {
+                    'builtin-classes': false,
+                    'ignore-global': true,
+                    'export': 'full',
+                    'pretty-json': true,
+                    'no-source': true
+                }
+            }
+        },
+
         jshint: {
             options: {
                 jshintrc: ".jshintrc"
@@ -150,6 +172,26 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'docs/app/globals.js': ['docs/app/globals.js.tmpl']
+                }
+            },
+
+            docs_api: {
+                options: {
+                    data: function () {
+                        var api = [];
+
+                        api.push(require('./docs/api/PPG.json'));
+                        api.push(require('./docs/api/PPG.dom.json'));
+                        api.push(require('./docs/api/PPG.util.json'));
+                        api.push(require('./docs/api/Fallback.json'));
+
+                        return {
+                            api: api
+                        };
+                    }
+                },
+                files: {
+                    'docs/app/templates/api/js.html': ['docs/app/templates/api/js.html.tmpl']
                 }
             }
         },
@@ -284,6 +326,7 @@ module.exports = function(grunt) {
         'jasmine',
         'saucelabs-jasmine'
     ]);
+
     grunt.registerTask('test:less', [
         'build',
         'connect',
@@ -296,11 +339,18 @@ module.exports = function(grunt) {
         'saucelabs-jasmine'
     ]);
 
+    grunt.registerTask('build-api-docs', [
+        'jsduck',
+        'render:docs_api',
+        'clean:docs_api'
+    ]);
+
     grunt.registerTask('build-docs', [
         'less',
         'autoprefixer:angular_material',
         'marked-material',
-        'render:docs_globals'
+        'render:docs_globals',
+        'build-api-docs'
     ]);
 
     grunt.registerTask('release', [

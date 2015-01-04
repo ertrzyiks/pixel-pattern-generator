@@ -1,0 +1,152 @@
+<%
+    var api = data.api;
+    var apiSet = {};
+
+    var builtinTypes = {
+        'Array': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array',
+        'Boolean': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean',
+        'Function': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function',
+        'String': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String',
+        'HTMLElement': 'https://developer.mozilla.org/en/docs/Web/API/HTMLElement'
+    };
+
+    api.forEach(function (def) {
+        apiSet[def.name] = def;
+    });
+
+    var getHueColor = function (def) {
+        if (def.private) {
+            return 'md-hue-3';
+        }
+
+        return 'md-hue-2';
+    };
+
+    var getMemberName = function (def, member) {
+        if (member.name === 'constructor') {
+            return 'new ' + def.name;
+        } else if (def.singleton) {
+            return def.name + '.' + member.name;
+        } else {
+            return member.name;
+        }
+    };
+
+    var getClassLink = function getClassLink(type) {
+
+        if (type.indexOf('|') !== -1) {
+            return type.split('|').map(function (t) {
+                return getClassLink(t);
+            }).join('|');
+        }
+
+        var id;
+        if (apiSet.hasOwnProperty(type)) {
+            id = apiSet[type].id;
+            return '<a href="#" ui-sref="api.js.item({ ref: \'' + id + '\'})" class="doc-type">' + type + '</a>';
+        }
+
+        if (builtinTypes.hasOwnProperty(type)) {
+            return '<a href="' + builtinTypes[type] + '" class="doc-type">' + type + '</a>';
+        }
+
+        return type;
+    };
+%>
+<div layout>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true">
+        <md-toolbar class="md-hue-2">
+            <h1 class="md-toolbar-tools">
+                <a ui-sref="api.js.item({ ref: 'index' })">Reference</a>
+            </h1>
+        </md-toolbar>
+
+        <md-list>
+
+        <% for(var i = 0; i < data.api.length; i++) { %>
+           <md-item>
+               <md-item-content>
+                   <md-button href="#" ui-sref="api.js.item({ ref: '<%= data.api[i].id %>' })" ui-sref-active="active"
+                              class="md-primary <%= getHueColor(data.api[i]) %> nav-link">
+                       <%= data.api[i].name %>
+                   </md-button>
+               </md-item-content>
+               <% if (i != data.api.length-1) { %>
+               <md-divider></md-divider>
+               <% } %>
+           </md-item>
+        <% } %>
+
+        </md-list>
+    </md-sidenav>
+
+        <ng-switch flex on="data.ref">
+        <% for(var i = 0; i < data.api.length; i++) { %>
+            <div ng-switch-when="<%= data.api[i].id %>">
+                <% var def = data.api[i]; %>
+
+                <md-toolbar class="<%= getHueColor(def) %>">
+                    <h1 class="md-toolbar-tools">
+                        <%= def.name %>
+                        <% if (def.private) { %> <span class="annotation">PRIVATE</span><% } %>
+                    </h1>
+                </md-toolbar>
+
+                <md-content class="doc-content" flex>
+                    <div class="doc-def">
+                        <%- def.doc %>
+                    </div>
+
+                    <% for (var k = 0; k < def.members.length; k++) { %>
+                        <div class="doc-def-member md-whiteframe-z1">
+                            <% var member = def.members[k]; %>
+
+                            <code class="doc-code top1">
+                                <%= getMemberName(def, member) %>
+                                (
+                                <% for (var j = 0; j < member.params.length; j++) { %>
+                                    <%- getClassLink(member.params[j].type) %> <%= member.params[j].name %>
+                                    <% if (j != member.params.length-1) { %>,<% } %>
+                                <% } %>
+                                ) : <%- member.return ? getClassLink(member.return.type) : 'void' %>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                <%- member.doc %>
+
+                                <% if (member.params.length > 0) { %>
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    <% for (var j = 0; j < member.params.length; j++) { %>
+                                        <dt><%= member.params[j].name %> : <%- getClassLink(member.params[j].type) %></dt>
+                                        <dd><%- member.params[j].doc %></dd>
+                                    <% } %>
+                                    </dl>
+                                <% } %>
+
+                                <% if (member.return) { %>
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><%- getClassLink(member.return.type) %></dt>
+                                        <dd><%- member.return.doc %></dd>
+                                    </dl>
+                                <% } %>
+                            </div>
+                        </div>
+                    <% } %>
+                </md-content>
+            </div>
+        <% } %>
+            <md-content class="doc-content" flex>
+                <div ng-switch-default>
+                    <p>Javascript part of <strong>Pixel Pattern Generator</strong> is fallback for browsers,
+                        which doesnt support box-shadow.</p>
+                </div>
+            </md-content>
+        </ng-switch>
+
+
+
+    <div ui-view></div>
+</div>

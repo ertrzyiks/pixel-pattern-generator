@@ -30,6 +30,15 @@
 
         hasBoxShadow = hasSupportFor('boxShadow');
 
+    /**
+     * @class PPG
+     */
+    /**
+     * Check if fallback is necessary.
+     *
+     * @method isEnabled
+     * @return {Boolean} True, when box-shadow is not supported; false otherwise
+     */
     root.PPG.isEnabled = function () {
         return !hasBoxShadow;
     };
