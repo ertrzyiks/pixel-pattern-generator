@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             },
             angular_material: {
                 src: 'bower_components/angular-material/angular-material.min.css',
-                dest: 'docs/css/angular-material.min.css'
+                dest: 'docs/css/angular-material.0.7.0.min.css'
             }
         },
 
