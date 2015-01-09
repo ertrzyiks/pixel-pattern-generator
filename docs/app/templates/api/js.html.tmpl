@@ -100,6 +100,7 @@
                     <% for (var k = 0; k < def.members.length; k++) { %>
                         <div class="doc-def-member md-whiteframe-z1">
                             <% var member = def.members[k]; %>
+                            <% if (member.ignore) { continue; } %>
 
                             <code class="doc-code top1">
                                 <%= getMemberName(def, member) %>
