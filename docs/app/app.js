@@ -8,29 +8,67 @@ angular.module('docs', ['ngMaterial', 'ui.router'])
                 url: "/",
                 templateUrl: "app/templates/home.html"
             })
+        ;
+    })
+    .config(function($stateProvider) {
+        $stateProvider
             .state('examples', {
-                url: "/examples",
+                url: '/examples',
                 templateUrl: 'app/templates/examples.html',
 
-                controller: function ($scope) {
+                controller: function ($scope, $state) {
+                    var getExampleById = function (id) {
+                        return $scope.data.examples.filter(function (example) {
+                            return example.id === id;
+                        }).shift();
+                    };
+
                     $scope.data = {};
+                    $scope.data.ref = '';
+
+                    $scope.$watch(function ($scope) {
+                        return $scope.data.ref;
+                    }, function (id) {
+                        $scope.data.example = getExampleById(id);
+                    });
+
                     $scope.data.examples = [
                         {
+                            id: 'pattern1',
                             title: 'Pattern #1',
                             className: 'pixel-pattern-1',
-                            fileName: 'less/pixel-pattern-1.less'
+                            fileName: 'less/pixel-pattern-1.less',
+                            description: 'Chessboard pattern'
                         },
                         {
-                            title: 'Schibsted pixel pattern',
+                            id: 'sch-pattern',
+                            title: 'Branding pattern',
                             className: 'sch-pixel-pattern',
-                            fileName: 'less/sch-pixel-pattern.less'
+                            fileName: 'less/sch-pixel-pattern.less',
+                            description: 'Example of pixel pattern used for Schibsted Tech Polska branding.'
                         },
                         {
+                            id: 'pattern2',
                             title: 'Pattern #2',
                             className: 'pixel-pattern-2',
-                            fileName: 'less/pixel-pattern-2.less'
+                            fileName: 'less/pixel-pattern-2.less',
+                            description:
+                                'Minion from template for minecraft players,' +
+                                ' supposed to be build with wool or something.'
                         }
                     ];
+
+                    if ($state.$current.self.name === 'examples') {
+                        $state.go('examples.item', { ref: 'pattern1' });
+                        return;
+                    }
+                }
+            })
+            .state('examples.item', {
+                url: '/?ref',
+                controller: function ($scope, $stateParams) {
+                    $scope.data = $scope.data || {};
+                    $scope.data.ref = $stateParams.ref;
                 }
             })
         ;

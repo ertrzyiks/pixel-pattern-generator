@@ -1,17 +1,53 @@
-<md-list>
-    <md-item ng-repeat="example in data.examples">
-        <md-item-content layout="column" layout-gt-sm="row" layout-margin>
-            <div style="width: 30%" layout layout-align="center center">
-                <div class="pixel-pattern" ng-class="example.className">
+<div layout>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true">
+        <md-toolbar class="md-hue-2">
+            <h1 class="md-toolbar-tools">
+                Examples
+            </h1>
+        </md-toolbar>
+
+        <md-list>
+            <md-item ng-repeat="example in data.examples">
+                <md-item-content>
+                    <md-button href="#" ui-sref="examples.item({ ref: example.id })" ui-sref-active="active"
+                               class="md-primary md-hue-1 nav-link" ng-bind="example.title">
+                    </md-button>
+                </md-item-content>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-item>
+        </md-list>
+    </md-sidenav>
+
+    <div ng-if="data.example" flex>
+        <md-toolbar class="md-hue-2">
+            <h1 class="md-toolbar-tools" ng-bind="data.example.title"></h1>
+        </md-toolbar>
+
+        <md-content class="doc-content" flex>
+            <p ng-bind="data.example.description"></p>
+
+            <div style="height: 300px;" layout layout-align="center center">
+                <div class="pixel-pattern" ng-class="data.example.className">
                     <div class="pixel-pattern-pixel"></div>
                 </div>
             </div>
 
-            <md-sidenav flex class="md-whiteframe-z2" md-is-locked-open="true" style="max-height: 450px">
-                    <pre ng-include="example.fileName"></pre>
-            </md-sidenav>
-        </md-item-content>
+            <h4>Html</h4>
+            <pre class="md-whiteframe-z1">
+&lt;div class="pixel-pattern <b>{{data.example.className}}</b>"&gt;
+    &lt;div class="pixel-pattern-pixel"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
 
-        <md-divider ng-if="!$last"></md-divider>
-    </md-item>
-</md-list>
+            <h4>Less</h4>
+            <pre class="md-whiteframe-z1" style="max-height: 450px; overflow: auto" ng-include="data.example.fileName"></pre>
+        </md-content>
+    </div>
+
+    <div ng-if="!data.example">
+        <md-content class="doc-content" flex>
+            <h3>Example <i ng-bind="data.ref"></i> not found</h3>
+        </md-content>
+    </div>
+
+    <div ui-view></div>
+</div>
