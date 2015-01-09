@@ -8,4 +8,4 @@ script:
 - npm test
 env:
   matrix:
-    secure: Ura70IlE8zZi55doTSMVEM0zZHogtIkGGmxJwSUlcWNVg4j/PoeOrYGmR0SXzYa2G0kuSBU99cfIB3KaHSfGMmPIcHh0G/3aVeJ6PVjb4/zFQVpbkXojiiVYD0cI9v2DAF6BPiANoxiT53jDYTvX7gaVX3gf+hcaiStxykEan8Y=
+  - secure: DJtzo0RYXcKHGmiCRC5PZFKu828M5OJyye5RZp/B2vhFFbpMiH/Ni+sj6N+7vuU3boX6CNvnZM+PKVz9iYleippwE6vAJk5y4Cpjo0BKeLEdn+NNW7RaOJW4EJCVmn16KTfejnk2JNpz3wH1fq98rCZmHne2zoVJFwNdjtRaslk=

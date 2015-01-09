@@ -199,7 +199,7 @@ module.exports = function(grunt) {
         'saucelabs-jasmine': {
             fallback: {
                 options: {
-                    username: 'ertrzyiks',
+                    username: 'ertrzyiks-ppg',
                     key: process.env.SAUCE_ACCESS_KEY,
                     urls: ['http://localhost:8000/spec/js/index.html'],
                     maxPollRetries: 20,
