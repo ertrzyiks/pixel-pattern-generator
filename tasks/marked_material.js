@@ -12,7 +12,7 @@ module.exports = function (grunt) {
             isFirstHeader = true;
 
         renderer.paragraph = function (text) {
-            return '<p flex>' + text + '</p>';
+            return '<p layout-margin>' + text + '</p>';
         };
 
         renderer.code = function (code, lang, escaped) {
@@ -31,8 +31,8 @@ module.exports = function (grunt) {
 
                 isFirstHeader = false;
 
-                html += '<md-whiteframe class="md-whiteframe-z1" layout="column" layout-margin>';
-                html += '<md-toolbar>';
+                html += '<md-whiteframe class="md-whiteframe-z1" layout="column">';
+                html += '<md-toolbar class="md-hue-2">';
                 html += '<h2 class="md-toolbar-tools">' + text + '</h2>';
                 html += '</md-toolbar>';
                 return html;
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                 return html;
             }
 
-            return '<h' + level + ' flex>' + text + '</h' + level + '>';
+            return '<h' + level + ' layout-margin>' + text + '</h' + level + '>';
         };
 
         marked.setOptions({
