@@ -1,0 +1,112 @@
+<div layout>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true">
+        <md-toolbar class="md-hue-2">
+            <h1 class="md-toolbar-tools">
+                <a ui-sref="api.less.item({ ref: 'index' })">Reference</a>
+            </h1>
+        </md-toolbar>
+
+        <md-list>
+            <md-item>
+                <md-item-content>
+                    <md-button href="#" ui-sref="api.less.item({ ref: 'pixel-pattern' })" ui-sref-active="active"
+                               class="md-primary md-hue-1 nav-link">
+                        .pixel-pattern
+                    </md-button>
+                </md-item-content>
+                <md-divider></md-divider>
+            </md-item>
+            <md-item>
+                <md-item-content>
+                    <md-button href="#" ui-sref="api.less.item({ ref: 'pixel-pattern-size' })" ui-sref-active="active"
+                               class="md-primary md-hue-1 nav-link">
+                        .pixel-pattern-size
+                    </md-button>
+                </md-item-content>
+            </md-item>
+        </md-list>
+    </md-sidenav>
+
+    <ng-switch on="data.ref">
+        <div ng-switch-when="pixel-pattern">
+            <md-toolbar class="md-hue-2">
+                <h1 class="md-toolbar-tools">
+                    .pixel-pattern
+                </h1>
+            </md-toolbar>
+            <md-content class="doc-content" flex>
+                <p>
+                    Generate styles of pixel figure. For selector in scope it set width and height big enough to contain
+                    your figure. For nested selector .pixel-pattern-pixel it set multiple box shadows for actual figure.
+                </p>
+
+                <code class="doc-code">.pixel-pattern( @pixel-list );</code>
+
+                <dl>
+                    <dt>@pixel-list</dt>
+                    <dd>
+                        List of pixels separated by comma.
+                        Single pixel is set of x, y coords and color separated by space.
+                    </dd>
+                </dl>
+
+                <md-toolbar class="md-warn">
+                    <h2 class="md-toolbar-tools">
+                        <span>Note: you need to specify at least 2 pixels</span>
+                    </h2>
+                </md-toolbar>
+
+                <h4>Example:</h4>
+<pre><code class="doc-code">//Less
+.my-pixel-pattern {
+    .pixel-pattern( 0 1 red, 1 0 blue );
+}
+</code></pre>
+            <p>and corresponding html</p>
+<pre><code class="doc-code">&lt;div class="my-pixel-pattern"&gt;
+    &lt;div class="pixel-pattern-pixel"&gt;
+&lt;/div&gt;
+</code></pre>
+            </md-content>
+        </div>
+        <div ng-switch-when="pixel-pattern-size">
+            <md-toolbar class="md-hue-2">
+                <h1 class="md-toolbar-tools">
+                    .pixel-pattern-size
+                </h1>
+            </md-toolbar>
+            <md-content class="doc-content" flex>
+                <p>
+                    Use this mixin to scale your figure created with
+                    <a ui-sref="api.less.item({ ref: 'pixel-pattern' })">.pixel-pattern</a> mixin.
+                    Size determine width and height of single pixel.
+                </p>
+
+                <pre><code class="doc-code">.pixel-pattern-size( @size );</code></pre>
+
+                <dl>
+                    <dt>@size</dt>
+                    <dd>Size of single pixel in any unit supported by browser <em>(default 1em)</em></dd>
+                </dl>
+
+                <h4>Example:</h4>
+<pre><code class="doc-code">//Less
+.my-pixel-pattern {
+    .pixel-pattern-size(32px);
+    .pixel-pattern( some pixels here ... );
+}
+</code></pre>
+                </md-content>
+        </div>
+        <div ng-switch-default>
+            <md-content class="doc-content" flex>
+                <p>Less part of <strong>Pixel Pattern Generator</strong> is collection of mixins which let you create
+                and maintain pixel based figures.</p>
+
+                <p>This is core of whole library, since CSS is primary method of rendering.</p>
+            </md-content>
+        </div>
+    </ng-switch>
+
+    <div ui-view></div>
+</div>

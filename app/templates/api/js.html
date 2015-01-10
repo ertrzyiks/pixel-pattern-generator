@@ -1,0 +1,613 @@
+
+<div layout>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true">
+        <md-toolbar class="md-hue-2">
+            <h1 class="md-toolbar-tools">
+                <a ui-sref="api.js.item({ ref: 'index' })">Reference</a>
+            </h1>
+        </md-toolbar>
+
+        <md-list>
+
+        
+           <md-item>
+               <md-item-content>
+                   <md-button href="#" ui-sref="api.js.item({ ref: 'class-PPG' })" ui-sref-active="active"
+                              class="md-primary md-hue-2 nav-link">
+                       PPG
+                   </md-button>
+               </md-item-content>
+               
+               <md-divider></md-divider>
+               
+           </md-item>
+        
+           <md-item>
+               <md-item-content>
+                   <md-button href="#" ui-sref="api.js.item({ ref: 'class-PPG.dom' })" ui-sref-active="active"
+                              class="md-primary md-hue-3 nav-link">
+                       PPG.dom
+                   </md-button>
+               </md-item-content>
+               
+               <md-divider></md-divider>
+               
+           </md-item>
+        
+           <md-item>
+               <md-item-content>
+                   <md-button href="#" ui-sref="api.js.item({ ref: 'class-PPG.util' })" ui-sref-active="active"
+                              class="md-primary md-hue-3 nav-link">
+                       PPG.util
+                   </md-button>
+               </md-item-content>
+               
+               <md-divider></md-divider>
+               
+           </md-item>
+        
+           <md-item>
+               <md-item-content>
+                   <md-button href="#" ui-sref="api.js.item({ ref: 'class-Fallback' })" ui-sref-active="active"
+                              class="md-primary md-hue-2 nav-link">
+                       Fallback
+                   </md-button>
+               </md-item-content>
+               
+           </md-item>
+        
+
+        </md-list>
+    </md-sidenav>
+
+        <ng-switch flex on="data.ref">
+        
+            <div ng-switch-when="class-PPG">
+                
+
+                <md-toolbar class="md-hue-2">
+                    <h1 class="md-toolbar-tools">
+                        PPG
+                        
+                    </h1>
+                </md-toolbar>
+
+                <md-content class="doc-content" flex>
+                    <div class="doc-def">
+                        <p>PPG Namespace</p>
+
+                    </div>
+
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.isEnabled
+                                (
+                                
+                                ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="doc-type">Boolean</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                <p>Check if fallback is necessary.</p>
+
+
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="doc-type">Boolean</a></dt>
+                                        <dd><p>True, when box-shadow is not supported; false otherwise</p>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.setupFallback
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> el
+                                    
+                                
+                                ) : <a href="#" ui-sref="api.js.item({ ref: 'class-Fallback'})" class="doc-type">Fallback</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                <p>Setup fallback manually on specific html element.</p>
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd><p>Html node or id of element as string</p>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="#" ui-sref="api.js.item({ ref: 'class-Fallback'})" class="doc-type">Fallback</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                </md-content>
+            </div>
+        
+            <div ng-switch-when="class-PPG.dom">
+                
+
+                <md-toolbar class="md-hue-3">
+                    <h1 class="md-toolbar-tools">
+                        PPG.dom
+                         <span class="annotation">PRIVATE</span>
+                    </h1>
+                </md-toolbar>
+
+                <md-content class="doc-content" flex>
+                    <div class="doc-def">
+                        <p>DOM manipulation helpers</p>
+
+                    </div>
+
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.dom.addClass
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    ,
+                                
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> className
+                                    
+                                
+                                ) : void
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                        <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.dom.getChildByClass
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    ,
+                                
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> className
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                        <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.dom.getComputedStyle
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    ,
+                                
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> property
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                        <dt>property : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.dom.getContainer
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    ,
+                                
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> className
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                        <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.dom.hasClass
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    ,
+                                
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> className
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="doc-type">Boolean</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                        <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="doc-type">Boolean</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.dom.removeChildren
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                </md-content>
+            </div>
+        
+            <div ng-switch-when="class-PPG.util">
+                
+
+                <md-toolbar class="md-hue-3">
+                    <h1 class="md-toolbar-tools">
+                        PPG.util
+                         <span class="annotation">PRIVATE</span>
+                    </h1>
+                </md-toolbar>
+
+                <md-content class="doc-content" flex>
+                    <div class="doc-def">
+                        <p>Utilities</p>
+
+                    </div>
+
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                PPG.util.filter
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a> input
+                                    ,
+                                
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="doc-type">Function</a> fn
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                <p>Filter out all array items, for which fn return falsy value.
+Use Array.prototype.filter when available.</p>
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>input : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                        <dt>fn : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="doc-type">Function</a></dt>
+                                        <dd>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                </md-content>
+            </div>
+        
+            <div ng-switch-when="class-Fallback">
+                
+
+                <md-toolbar class="md-hue-2">
+                    <h1 class="md-toolbar-tools">
+                        Fallback
+                        
+                    </h1>
+                </md-toolbar>
+
+                <md-content class="doc-content" flex>
+                    <div class="doc-def">
+                        <p>Elements handled by this fallback will be filled with HTML elements
+to mimic pixel pattern generated by box-shadow.</p>
+
+<p>Intended for IE&lt;9</p>
+
+                    </div>
+
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                new Fallback
+                                (
+                                
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> element
+                                    
+                                
+                                ) : <a href="#" ui-sref="api.js.item({ ref: 'class-Fallback'})" class="doc-type">Fallback</a>
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>element : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
+                                        <dd><p>Html element of pixel figure</p>
+</dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="#" ui-sref="api.js.item({ ref: 'class-Fallback'})" class="doc-type">Fallback</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            <code class="doc-code top1">
+                                update
+                                (
+                                
+                                ) : void
+                            </code>
+
+                            <div class="doc-def-member-details">
+                                <p>Creates or recreates html structure, which mimic box shadow pixels.</p>
+
+
+                                
+
+                                
+                            </div>
+                        </div>
+                    
+                </md-content>
+            </div>
+        
+            <md-content class="doc-content" flex>
+                <div ng-switch-default>
+                    <p>Javascript part of <strong>Pixel Pattern Generator</strong> is fallback for browsers,
+                        which doesnt support box-shadow.</p>
+                </div>
+            </md-content>
+        </ng-switch>
+
+
+
+    <div ui-view></div>
+</div>

@@ -1,3 +1,12 @@
+/**
+ * Generate styles for pixel pattern
+ */
+/**
+ * Set color for single pixel
+ */
+/**
+ * Set size of single pixel
+ */
 .sch-pixel-pattern {
   font-size: 25px;
   width: 6em;
@@ -5,6 +14,7 @@
 }
 .sch-pixel-pattern .pixel-pattern-pixel {
   display: block;
+  position: absolute;
   width: 1em;
   height: 1em;
   -webkit-box-shadow: 4em 0em #289fc5, 5em 1em #006ba1, 4em 2em #289fc5, 3em 3em #93d4e9, 4em 3em #69c5e2, 5em 3em #006ba1, 0em 4em #93d4e9, 2em 4em #93d4e9, 3em 4em #69c5e2, 4em 4em #289fc5, 5em 4em #0086b9, 1em 5em #006ba1, 3em 5em #289fc5, 4em 5em #93d4e9, 5em 5em #006ba1, 2em 6em #289fc5, 3em 6em #0086b9, 4em 6em #006ba1, 5em 6em #005e88;
