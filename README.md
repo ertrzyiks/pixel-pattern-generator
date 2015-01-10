@@ -20,7 +20,7 @@ Tested and works in browsers:
 ### with bower
     
 ```bash
-bower install pixel-pattern-generator
+bower install pixel-pattern-generator --save-dev
 ```
     
 ### with git
@@ -44,6 +44,41 @@ Use mixin to set size of pixel and assign color to chosen coordinates
   );
 }
 ```
+
+then put somewhere in page content following html
+
+```html
+<div class="pixel-pattern pixelart-myawesomesquare">
+    <div class="pixel-pattern-pixel"></div>
+</div>
+```
+
+## Fallback
+
+When you need better browser support than box-shadow compatible, you can use javascript fallback. 
+First, insert fallback script
+
+```html
+<script src="js/pixel-pattern-generator.min.js"></script>
+```
+
+then give your pixel html element id and initialize fallback using PPG.setupFallback function.
+
+```html
+<div class="pixel-pattern pixelart-myawesomesquare" id="myawesomesquare-1">
+    <div class="pixel-pattern-pixel"></div>
+</div>
+<script>
+PPG.setupFallback('myawesomesquare-1');
+</script>
+```
+
+If will automatically detect if fallback is necessary. In modern browser this function do nothing.
+
+## To do
+
+- Make it easier to use fallback
+- Support for single pixel figures
 
 ## License
 

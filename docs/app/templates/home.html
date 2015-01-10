@@ -5,7 +5,7 @@
 <li>Opera</li>
 <li>IE9+</li>
 </ul>
-<md-toolbar class="docs-toolbar"><h2 class="md-toolbar-tools">Install</h2></md-toolbar><h3 layout-margin>with bower</h3><div layout-margin><pre><code class="lang-bash">bower install pixel-pattern-generator
+<md-toolbar class="docs-toolbar"><h2 class="md-toolbar-tools">Install</h2></md-toolbar><h3 layout-margin>with bower</h3><div layout-margin><pre><code class="lang-bash">bower install pixel-pattern-generator --save-dev
 </code></pre>
 </div><h3 layout-margin>with git</h3><div layout-margin><pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> git@github.com:ertrzyiks/pixel-pattern-generator.git
 </code></pre>
@@ -20,4 +20,22 @@
   );
 }
 </code></pre>
-</div><md-toolbar class="docs-toolbar"><h2 class="md-toolbar-tools">License</h2></md-toolbar><p layout-margin>Copyright (c) 2014, Mateusz Derks. (MIT License)</p><p layout-margin>See LICENSE for more info.</p></md-whiteframe>
+</div><p layout-margin>then put somewhere in page content following html</p><div layout-margin><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pixel-pattern pixelart-myawesomesquare"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pixel-pattern-pixel"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+</div><md-toolbar class="docs-toolbar"><h2 class="md-toolbar-tools">Fallback</h2></md-toolbar><p layout-margin>When you need better browser support than box-shadow compatible, you can use javascript fallback. 
+First, insert fallback script</p><div layout-margin><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/pixel-pattern-generator.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+</div><p layout-margin>then give your pixel html element id and initialize fallback using PPG.setupFallback function.</p><div layout-margin><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pixel-pattern pixelart-myawesomesquare"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myawesomesquare-1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pixel-pattern-pixel"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+PPG.setupFallback(<span class="hljs-string">'myawesomesquare-1'</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+</div><p layout-margin>If will automatically detect if fallback is necessary. In modern browser this function do nothing.</p><md-toolbar class="docs-toolbar"><h2 class="md-toolbar-tools">To do</h2></md-toolbar><ul>
+<li>Make it easier to use fallback</li>
+<li>Support for single pixel figures</li>
+</ul>
+<md-toolbar class="docs-toolbar"><h2 class="md-toolbar-tools">License</h2></md-toolbar><p layout-margin>Copyright (c) 2014, Mateusz Derks. (MIT License)</p><p layout-margin>See LICENSE for more info.</p></md-whiteframe>
