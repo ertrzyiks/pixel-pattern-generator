@@ -1,3 +1,12 @@
+<a name="0.0.5"></a>
+### 0.0.5 (2015-01-10)
+
+
+#### Features
+
+* **js:** add fallback ([0ad6b70a](https://github.com/ertrzyiks/pixel-pattern-generator/commit/0ad6b70adbc513df73d53f4f28de2db755e06bc7))
+
+
 <a name="0.0.4"></a>
 ### 0.0.4 (2014-12-27)
 
