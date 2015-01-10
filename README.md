@@ -82,6 +82,6 @@ If will automatically detect if fallback is necessary. In modern browser this fu
 
 ## License
 
-Copyright (c) 2014, Mateusz Derks. (MIT License)
+Copyright (c) 2014-2015, Mateusz Derks. (MIT License)
 
 See LICENSE for more info.
