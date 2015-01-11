@@ -36,6 +36,25 @@ describe('Pixel Pattern Generator', function () {
         });
     });
 
+    describe('pixel-pattern-single', function () {
+        it('should render all pixels', function (done) {
+            renderLessWithLibrary('.mypixel{ .pixel-pattern-single(1 0 #ff0000); }', function (err, css) {
+                expect(err).toBe(null);
+                expect(css).toContain('0em 1em #ff0000;');
+                done();
+            });
+        });
+
+        it('should force container width to contain all pixels', function (done) {
+            renderLessWithLibrary('.mypixel{ .pixel-pattern-single(0 10 #ff0000); }', function (err, css) {
+                expect(err).toBe(null);
+                expect(css).toContain('width: 11em;');
+                expect(css).toContain('height: 1em;');
+                done();
+            });
+        });
+    });
+
     describe('pixel-pattern-size', function () {
         it('should set font size in pixels', function (done) {
             renderLessWithLibrary('.mypixel{ .pixel-pattern-size(25px); }', function (err, css) {

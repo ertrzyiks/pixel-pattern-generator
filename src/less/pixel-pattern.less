@@ -8,10 +8,7 @@
   .set-height(@pixels);
 
   & .pixel-pattern-pixel{
-    display: block;
-    position: absolute;
-    width: 1em;
-    height: 1em;
+    .pixel-pattern-pixel-base();
 
     .for(@pixels); .-each(@pixel) {
       @row: extract(@pixel, 1);
@@ -21,6 +18,35 @@
       .pixel-pattern-set-pixel(@row, @col, @color);
     }
   }
+}
+
+/**
+ * Generate styles for pixel pattern created with single pixel
+ */
+.pixel-pattern-single(@pixel, ...) {
+  .pixel-pattern-util_();
+
+  @row: extract(@pixel, 1);
+  @col: extract(@pixel, 2);
+  @color: extract(@pixel, 3);
+
+  width: @col + 1em;
+  height: @row + 1em;
+
+  & .pixel-pattern-pixel {
+    .pixel-pattern-pixel-base();
+    .pixel-pattern-set-pixel(@row, @col, @color);
+  }
+}
+
+/**
+ * Set style of single pixel
+ */
+.pixel-pattern-pixel-base() {
+  display: block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
 }
 
 /**
@@ -46,7 +72,6 @@
 .pixel-pattern-size(@size){
   font-size: @size;
 }
-
 
 .pixel-pattern-util_(){
   .pixel-pattern-util_for_();
