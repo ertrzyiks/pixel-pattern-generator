@@ -292,6 +292,14 @@ module.exports = function(grunt) {
                 files: {
                     'dist/js/pixel-pattern-generator.js': '<%= uglify.options.sources %>'
                 }
+            },
+            angulartics: {
+                files: {
+                    'docs/js/angulartics.custom.min.js': [
+                        'bower_components/angulartics/src/angulartics.js',
+                        'bower_components/angulartics/src/angulartics-ga.js'
+                    ]
+                }
             }
         },
 
@@ -347,6 +355,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build-docs', [
         'less',
+        'uglify:angulartics',
         'autoprefixer:angular_material',
         'marked-material',
         'render:docs_globals',
