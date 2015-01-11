@@ -1,4 +1,4 @@
-angular.module('docs', ['ngMaterial', 'ui.router'])
+angular.module('docs', ['ngMaterial', 'ui.router', 'angulartics.google.analytics'])
     .config(function($urlRouterProvider) {
         $urlRouterProvider.when('', '/');
     })
