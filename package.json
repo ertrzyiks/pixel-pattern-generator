@@ -1,6 +1,6 @@
 {
   "name": "pixel-pattern-generator",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Pixel pattern generator",
   "main": "index.js",
   "scripts": {

@@ -1,3 +1,12 @@
+<a name="0.1.0"></a>
+## 0.1.0 (2015-01-18)
+
+
+#### Features
+
+* **js:** add init and update methods for single line usage ([248fb717](https://github.com/ertrzyiks/pixel-pattern-generator/commit/248fb7178a76fc91562f0e9f36d50db0fcab59cc))
+
+
 <a name="0.0.5"></a>
 ### 0.0.5 (2015-01-10)
 
