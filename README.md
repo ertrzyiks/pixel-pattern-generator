@@ -15,6 +15,9 @@ Tested and works in browsers:
 - Opera
 - IE9+
 
+Additionally with Javascript fallback
+- IE8+
+
 ## Install
 
 ### with bower
