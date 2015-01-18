@@ -19,6 +19,21 @@
         });
     }
 
+    //IE8quirks/IE7 compatible version
+    function legacyGetElementsByClassName(node, classname) {
+        var a = [],
+            re = new RegExp('(^| )' + classname + '( |$)'),
+            els = node.getElementsByTagName('*'),
+            i, j;
+
+        for (i = 0, j = els.length; i < j; i++) {
+            if (re.test(els[i].className)) {
+                a.push(els[i]);
+            }
+        }
+        return a;
+    }
+
     /**
      * DOM manipulation helpers
      *
@@ -36,7 +51,6 @@
         hasClass: hasClass,
 
         /**
-         *
          * @param {HTMLElement} el
          * @param {String} className
          */
@@ -47,7 +61,6 @@
         },
 
         /**
-         *
          * @param {HTMLElement} el
          * @param {String} property
          * @returns {String}
@@ -71,7 +84,6 @@
         },
 
         /**
-         *
          * @param {HTMLElement} el
          * @param {String} className
          * @returns {HTMLElement}
@@ -94,7 +106,6 @@
         },
 
         /**
-         *
          * @param {HTMLElement} el
          * @param {String} className
          * @returns {HTMLElement}
@@ -112,7 +123,6 @@
         },
 
         /**
-         *
          * @param {HTMLElement} el
          * @returns {HTMLElement}
          */
@@ -122,6 +132,18 @@
             }
 
             return el;
+        },
+
+        /**
+         * @param {String} className
+         * @return {Array}
+         */
+        getElementsByClass: function (className) {
+            if ('undefined' === typeof (document.querySelectorAll)) {
+                return legacyGetElementsByClassName(document.body, className);
+            }
+
+            return document.querySelectorAll('.' + className);
         }
     };
 })(this);

@@ -62,23 +62,18 @@ First, insert fallback script
 <script src="js/pixel-pattern-generator.min.js"></script>
 ```
 
-then give your pixel html element id and initialize fallback using PPG.setupFallback function.
+then give your pixel html element id and initialize fallback using PPG.init function.
 
 ```html
-<div class="pixel-pattern pixelart-myawesomesquare" id="myawesomesquare-1">
+<div class="pixel-pattern pixelart-myawesomesquare">
     <div class="pixel-pattern-pixel"></div>
 </div>
 <script>
-PPG.setupFallback('myawesomesquare-1');
+PPG.init();
 </script>
 ```
 
 If will automatically detect if fallback is necessary. In modern browser this function do nothing.
-
-## To do
-
-- Make it easier to use fallback
-- Support for single pixel figures
 
 ## License
 

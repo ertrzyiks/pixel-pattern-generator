@@ -58,6 +58,15 @@
             return letter.toUpperCase();
         });
     }
+    function legacyGetElementsByClassName(node, classname) {
+        var a = [], re = new RegExp("(^| )" + classname + "( |$)"), els = node.getElementsByTagName("*"), i, j;
+        for (i = 0, j = els.length; i < j; i++) {
+            if (re.test(els[i].className)) {
+                a.push(els[i]);
+            }
+        }
+        return a;
+    }
     root.PPG.dom = {
         hasClass: hasClass,
         addClass: function(el, className) {
@@ -103,6 +112,12 @@
                 el.removeChild(el.firstChild);
             }
             return el;
+        },
+        getElementsByClass: function(className) {
+            if ("undefined" === typeof document.querySelectorAll) {
+                return legacyGetElementsByClassName(document.body, className);
+            }
+            return document.querySelectorAll("." + className);
         }
     };
 })(this);
@@ -188,15 +203,42 @@
         el.style.height = "1em";
         return el;
     };
-    PPG.setupFallback = function(el) {
-        if (!PPG.isEnabled()) {
-            return null;
-        }
+    function getOrCreateFallback(el) {
         if ("string" === typeof el) {
             el = document.getElementById(el);
         }
-        var fallback = new Fallback(el);
-        fallback.update();
-        return fallback;
+        if (!el) {
+            throw "Invalid element to apply fallback";
+        }
+        if ("undefined" === typeof el._ppgFallbackObj) {
+            el._ppgFallbackObj = new Fallback(el);
+        }
+        return el._ppgFallbackObj;
+    }
+    function getTargetCollection(el) {
+        var elements;
+        if (el) {
+            elements = [ el ];
+        } else {
+            elements = dom.getElementsByClass("pixel-pattern");
+        }
+        return elements;
+    }
+    PPG.update = function(el) {
+        if (!PPG.isEnabled()) {
+            return null;
+        }
+        var elements = getTargetCollection(el), i, fallback;
+        for (i = 0; i < elements.length; i++) {
+            fallback = getOrCreateFallback(elements[i]);
+            fallback.update();
+        }
+        return elements;
+    };
+    PPG.init = function(el) {
+        return PPG.update(el);
+    };
+    PPG.setupFallback = function(el) {
+        return PPG.init(el).shift()._ppgFallbackObj;
     };
 })(this);

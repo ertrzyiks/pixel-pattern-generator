@@ -83,15 +83,73 @@
                             
                             
 
+                            
+                            <code class="doc-code top1">
+                                PPG.init
+                                (
+                                
+                                    [
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    el
+                                    ]
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a>
+                            </code>
+                            
+
+                            <div class="doc-def-member-details">
+                                
+                                <p>Initialize fallback on all figures or single element.</p>
+
+<p>Update will affect all elements with class <code>pixel-pattern</code>, when element is not specified.</p>
+
+<p>Note: Currently update is actually re-init, so internally init and update methods share logic.</p>
+
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+                                            <p>Html node or id of element as string</p>
+(Optional)
+                                        </dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a></dt>
+                                        <dd><p>Array of affected elements or null</p>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            
                             <code class="doc-code top1">
                                 PPG.isEnabled
                                 (
                                 
                                 ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="doc-type">Boolean</a>
                             </code>
+                            
 
                             <div class="doc-def-member-details">
+                                
                                 <p>Check if fallback is necessary.</p>
+
 
 
                                 
@@ -111,18 +169,32 @@
                             
                             
 
+                            
+                            <s>
+                            
                             <code class="doc-code top1">
                                 PPG.setupFallback
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> el
+                                    
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    el
+                                    
                                     
                                 
                                 ) : <a href="#" ui-sref="api.js.item({ ref: 'class-Fallback'})" class="doc-type">Fallback</a>
                             </code>
+                            
+                            </s>
+                            
 
                             <div class="doc-def-member-details">
+                                
+                                    <h4><p>Use init/update instead</p>
+</h4>
+                                
                                 <p>Setup fallback manually on specific html element.</p>
+
 
 
                                 
@@ -131,8 +203,10 @@
                                     <dl>
                                     
                                         <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
-                                        <dd><p>Html node or id of element as string</p>
-</dd>
+                                        <dd>
+                                            <p>Html node or id of element as string</p>
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -142,6 +216,61 @@
                                     <dl>
                                         <dt><a href="#" ui-sref="api.js.item({ ref: 'class-Fallback'})" class="doc-type">Fallback</a></dt>
                                         <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            
+                            <code class="doc-code top1">
+                                PPG.update
+                                (
+                                
+                                    [
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    el
+                                    ]
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a>
+                            </code>
+                            
+
+                            <div class="doc-def-member-details">
+                                
+                                <p>Update fallback on all figures or single element.
+It may be necessary to update fallback after change of class of figure or other DOM changes.</p>
+
+<p>Update will affect all elements with class <code>pixel-pattern</code>, when element is not specified.</p>
+
+<p>Note: Currently update is actually re-init, so internally init and update methods share logic.</p>
+
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>|<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+                                            <p>Html node or id of element as string</p>
+(Optional)
+                                        </dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a></dt>
+                                        <dd><p>Array of affected elements or null</p>
 </dd>
                                     </dl>
                                 
@@ -172,21 +301,31 @@
                             
                             
 
+                            
                             <code class="doc-code top1">
                                 PPG.dom.addClass
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                                    el
+                                    
                                     ,
                                 
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> className
+                                    
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    className
+                                    
                                     
                                 
                                 ) : void
                             </code>
+                            
 
                             <div class="doc-def-member-details">
                                 
+                                
+
 
 
                                 
@@ -196,11 +335,15 @@
                                     
                                         <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                         <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -213,21 +356,31 @@
                             
                             
 
+                            
                             <code class="doc-code top1">
                                 PPG.dom.getChildByClass
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                                    el
+                                    
                                     ,
                                 
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> className
+                                    
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    className
+                                    
                                     
                                 
                                 ) : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
                             </code>
+                            
 
                             <div class="doc-def-member-details">
                                 
+                                
+
 
 
                                 
@@ -237,11 +390,15 @@
                                     
                                         <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                         <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -261,21 +418,31 @@
                             
                             
 
+                            
                             <code class="doc-code top1">
                                 PPG.dom.getComputedStyle
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                                    el
+                                    
                                     ,
                                 
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> property
+                                    
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    property
+                                    
                                     
                                 
                                 ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
                             </code>
+                            
 
                             <div class="doc-def-member-details">
                                 
+                                
+
 
 
                                 
@@ -285,11 +452,15 @@
                                     
                                         <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                         <dt>property : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -309,21 +480,31 @@
                             
                             
 
+                            
                             <code class="doc-code top1">
                                 PPG.dom.getContainer
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                                    el
+                                    
                                     ,
                                 
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> className
+                                    
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    className
+                                    
                                     
                                 
                                 ) : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
                             </code>
+                            
 
                             <div class="doc-def-member-details">
                                 
+                                
+
 
 
                                 
@@ -333,11 +514,15 @@
                                     
                                         <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                         <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -357,21 +542,81 @@
                             
                             
 
+                            
+                            <code class="doc-code top1">
+                                PPG.dom.getElementsByClass
+                                (
+                                
+                                    
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    className
+                                    
+                                    
+                                
+                                ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a>
+                            </code>
+                            
+
+                            <div class="doc-def-member-details">
+                                
+                                
+
+
+
+                                
+                                    <h5 class="doc-subheader">Parameters:</h5>
+
+                                    <dl>
+                                    
+                                        <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
+                                        <dd>
+                                            
+
+                                        </dd>
+                                    
+                                    </dl>
+                                
+
+                                
+                                    <h5 class="doc-subheader">Return:</h5>
+                                    <dl>
+                                        <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a></dt>
+                                        <dd>
+</dd>
+                                    </dl>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="doc-def-member md-whiteframe-z1">
+                            
+                            
+
+                            
                             <code class="doc-code top1">
                                 PPG.dom.hasClass
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                                    el
+                                    
                                     ,
                                 
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a> className
+                                    
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a>
+                                    className
+                                    
                                     
                                 
                                 ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="doc-type">Boolean</a>
                             </code>
+                            
 
                             <div class="doc-def-member-details">
                                 
+                                
+
 
 
                                 
@@ -381,11 +626,15 @@
                                     
                                         <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                         <dt>className : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="doc-type">String</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -405,18 +654,25 @@
                             
                             
 
+                            
                             <code class="doc-code top1">
                                 PPG.dom.removeChildren
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> el
+                                    
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                                    el
+                                    
                                     
                                 
                                 ) : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
                             </code>
+                            
 
                             <div class="doc-def-member-details">
                                 
+                                
+
 
 
                                 
@@ -426,7 +682,9 @@
                                     
                                         <dt>el : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -466,22 +724,32 @@
                             
                             
 
+                            
                             <code class="doc-code top1">
                                 PPG.util.filter
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a> input
+                                    
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a>
+                                    input
+                                    
                                     ,
                                 
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="doc-type">Function</a> fn
+                                    
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="doc-type">Function</a>
+                                    fn
+                                    
                                     
                                 
                                 ) : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a>
                             </code>
+                            
 
                             <div class="doc-def-member-details">
+                                
                                 <p>Filter out all array items, for which fn return falsy value.
 Use Array.prototype.filter when available.</p>
+
 
 
                                 
@@ -491,11 +759,15 @@ Use Array.prototype.filter when available.</p>
                                     
                                         <dt>input : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="doc-type">Array</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                         <dt>fn : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="doc-type">Function</a></dt>
                                         <dd>
-</dd>
+                                            
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -526,7 +798,9 @@ Use Array.prototype.filter when available.</p>
 
                 <md-content class="doc-content" flex>
                     <div class="doc-def">
-                        <p>Elements handled by this fallback will be filled with HTML elements
+                        <p>This class is not intended to be used directly. Object of this class may be returned by public methods.</p>
+
+<p>Elements handled by this fallback will be filled with HTML elements
 to mimic pixel pattern generated by box-shadow.</p>
 
 <p>Intended for IE&lt;9</p>
@@ -538,18 +812,25 @@ to mimic pixel pattern generated by box-shadow.</p>
                             
                             
 
+                            
                             <code class="doc-code top1">
                                 new Fallback
                                 (
                                 
-                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a> element
+                                    
+                                    <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a>
+                                    element
+                                    
                                     
                                 
                                 ) : <a href="#" ui-sref="api.js.item({ ref: 'class-Fallback'})" class="doc-type">Fallback</a>
                             </code>
+                            
 
                             <div class="doc-def-member-details">
                                 
+                                
+
 
 
                                 
@@ -558,8 +839,10 @@ to mimic pixel pattern generated by box-shadow.</p>
                                     <dl>
                                     
                                         <dt>element : <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLElement" class="doc-type">HTMLElement</a></dt>
-                                        <dd><p>Html element of pixel figure</p>
-</dd>
+                                        <dd>
+                                            <p>Html element of pixel figure</p>
+
+                                        </dd>
                                     
                                     </dl>
                                 
@@ -579,15 +862,19 @@ to mimic pixel pattern generated by box-shadow.</p>
                             
                             
 
+                            
                             <code class="doc-code top1">
                                 update
                                 (
                                 
                                 ) : void
                             </code>
+                            
 
                             <div class="doc-def-member-details">
+                                
                                 <p>Creates or recreates html structure, which mimic box shadow pixels.</p>
+
 
 
                                 

@@ -350,7 +350,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build-api-docs', [
         'jsduck',
         'render:docs_api',
-        'clean:docs_api'
+        //'clean:docs_api'
     ]);
 
     grunt.registerTask('build-docs', [
@@ -362,12 +362,21 @@ module.exports = function(grunt) {
         'build-api-docs'
     ]);
 
-    grunt.registerTask('release', [
-        'push::bump-only',
+    grunt.registerTask('_release', [
         'build',
         'build-docs',
         'changelog',
         'push-commit',
         'buildcontrol:pages'
+    ]);
+
+    grunt.registerTask('release', [
+        'push::bump-only',
+        '_release'
+    ]);
+
+    grunt.registerTask('release-minor', [
+        'push:minor:bump-only',
+        '_release'
     ]);
 };
