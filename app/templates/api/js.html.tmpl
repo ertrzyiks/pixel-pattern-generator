@@ -102,18 +102,31 @@
                             <% var member = def.members[k]; %>
                             <% if (member.ignore) { continue; } %>
 
+                            <% if (member.deprecated) { %>
+                            <s>
+                            <% } %>
                             <code class="doc-code top1">
                                 <%= getMemberName(def, member) %>
                                 (
                                 <% for (var j = 0; j < member.params.length; j++) { %>
-                                    <%- getClassLink(member.params[j].type) %> <%= member.params[j].name %>
+                                    <% if(member.params[j].optional) { %>[<% } %>
+                                    <%- getClassLink(member.params[j].type) %>
+                                    <%= member.params[j].name %>
+                                    <% if(member.params[j].optional) { %>]<% } %>
                                     <% if (j != member.params.length-1) { %>,<% } %>
                                 <% } %>
                                 ) : <%- member.return ? getClassLink(member.return.type) : 'void' %>
                             </code>
+                            <% if (member.deprecated) { %>
+                            </s>
+                            <% } %>
 
                             <div class="doc-def-member-details">
+                                <% if (member.deprecated && member.deprecated.text) { %>
+                                    <h4><%- member.deprecated.text %></h4>
+                                <% } %>
                                 <%- member.doc %>
+
 
                                 <% if (member.params.length > 0) { %>
                                     <h5 class="doc-subheader">Parameters:</h5>
@@ -121,7 +134,9 @@
                                     <dl>
                                     <% for (var j = 0; j < member.params.length; j++) { %>
                                         <dt><%= member.params[j].name %> : <%- getClassLink(member.params[j].type) %></dt>
-                                        <dd><%- member.params[j].doc %></dd>
+                                        <dd>
+                                            <%- member.params[j].doc %><% if(member.params[j].optional) { %>(Optional)<% } %>
+                                        </dd>
                                     <% } %>
                                     </dl>
                                 <% } %>
