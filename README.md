@@ -16,7 +16,7 @@ Tested and works in browsers:
 - IE9+
 
 Additionally with Javascript fallback
-- IE8+
+- IE6+
 
 ## Install
 
