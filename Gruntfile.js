@@ -350,7 +350,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build-api-docs', [
         'jsduck',
         'render:docs_api',
-        //'clean:docs_api'
+        'clean:docs_api'
     ]);
 
     grunt.registerTask('build-docs', [
